@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1044670941335",
+    "project_id": "homeharvest-4c97a",
+    "storage_bucket": "homeharvest-4c97a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044670941335:android:eb0c83f5cce509047f41d2",
+        "android_client_info": {
+          "package_name": "com.example.monir_try"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPcl-L_0A0uGOSpVSuqfbEZz3ZyiIxVcM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
