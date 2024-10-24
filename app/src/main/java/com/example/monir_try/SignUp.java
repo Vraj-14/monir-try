@@ -12,61 +12,88 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
 
     private FirebaseAuth auth;
-    private EditText editTextName, editTextEmail, editTextPassword;
-    private Button buttonSignUp;
-    private TextView textViewLogin;
+    private FirebaseFirestore firestore;
+    private EditText editTextText1, editTextText2, editTextText3;
+    private Button buttonlg;
+    private TextView textView8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        // Initialize FirebaseAuth instance
+        // Initialize FirebaseAuth and Firestore
         auth = FirebaseAuth.getInstance();
+        firestore = FirebaseFirestore.getInstance();
 
         // Get references to UI elements
-        editTextName = findViewById(R.id.editTextText1);  // Name field
-        editTextEmail = findViewById(R.id.editTextText2);  // Email field
-        editTextPassword = findViewById(R.id.editTextText3);  // Password field
-        buttonSignUp = findViewById(R.id.buttonlg);
-        textViewLogin = findViewById(R.id.textView8);
+        editTextText1 = findViewById(R.id.editTextText1); // user name
+        editTextText2 = findViewById(R.id.editTextText2); // email
+        editTextText3 = findViewById(R.id.editTextText3); // password
+        buttonlg = findViewById(R.id.buttonlg); // sign up button
+        textView8 = findViewById(R.id.textView8); // login text
 
         // Set onClickListener for the sign-up button
-        buttonSignUp.setOnClickListener(new View.OnClickListener() {
+        buttonlg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Get input values from fields
-                String name = editTextName.getText().toString().trim();
-                String email = editTextEmail.getText().toString().trim();
-                String password = editTextPassword.getText().toString().trim();
+                String userEmail = editTextText2.getText().toString().trim();
+                String userPassword = editTextText3.getText().toString().trim();
+                String userName = editTextText1.getText().toString().trim();
 
-                // Validate input fields
-                if (name.isEmpty()) {
-                    editTextName.setError("Name cannot be empty");
-                } else if (email.isEmpty()) {
-                    editTextEmail.setError("Email cannot be empty");
-                } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    editTextEmail.setError("Enter a valid email");
-                } else if (password.isEmpty()) {
-                    editTextPassword.setError("Password cannot be empty");
+                // Check if fields are empty
+                if (userEmail.isEmpty()) {
+                    editTextText2.setError("Email cannot be empty");
+                } else if (userPassword.isEmpty()) {
+                    editTextText3.setError("Password cannot be empty");
+                } else if (userName.isEmpty()) {
+                    editTextText1.setError("Name cannot be empty");
                 } else {
                     // Proceed with Firebase sign-up
-                    auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    auth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                // Sign-up successful
-                                Toast.makeText(SignUp.this, "Sign Up Successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(SignUp.this, MainActivity.class);
-                                startActivity(intent);
-                                finish();
+                                // Store user details in Firestore with a unique document ID (user ID)
+                                String userId = auth.getCurrentUser().getUid(); // Get unique user ID
+
+                                Map<String, Object> userMap = new HashMap<>();
+                                userMap.put("name", userName); // Store the value of userName
+                                userMap.put("email", userEmail); // Store the value of userEmail
+
+                                firestore.collection("users").document(userId).set(userMap)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    Toast.makeText(SignUp.this, "Sign Up Successful", Toast.LENGTH_SHORT).show();
+                                                    startActivity(new Intent(SignUp.this, MainActivity.class));
+                                                    finish();
+                                                } else {
+                                                    Toast.makeText(SignUp.this, "Failed to store user data.", Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(SignUp.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+
                             } else {
                                 // Sign-up failed
                                 Toast.makeText(SignUp.this, "Sign Up Failed. " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -78,7 +105,7 @@ public class SignUp extends AppCompatActivity {
         });
 
         // Set onClickListener for the login link text
-        textViewLogin.setOnClickListener(new View.OnClickListener() {
+        textView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Navigate to the login activity

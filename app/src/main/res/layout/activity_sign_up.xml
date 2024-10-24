@@ -31,7 +31,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:rippleColor="#E91E63" />
+        app:rippleColor="#E91E63"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -78,6 +79,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:contentDescription="emailtext"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/buttonlg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,15 +96,30 @@
             android:text="User Name"
             android:textStyle="bold" />
 
+<!--        <EditText-->
+<!--            android:id="@+id/editTextText1"-->
+<!--            android:layout_width="380dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:contentDescription="edit text"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="text"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:textColor="#CE1212"-->
+<!--            tools:ignore="ExtraText,TouchTargetSizeCheck" />-->
+
+
         <EditText
             android:id="@+id/editTextText1"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:contentDescription="Editable text field for user input"
             android:ems="10"
             android:inputType="text"
-            android:textColor="#CE1212" />
-            android:paddingLeft="10dp" />
+            android:textColor="#000000"
+            tools:ignore="TouchTargetSizeCheck" />
+
 
         <!-- Email Address -->
         <TextView
@@ -114,16 +131,19 @@
             android:text="Email Address"
             android:textStyle="bold" />
 
+        <!-- Password -->
         <EditText
             android:id="@+id/editTextText2"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:contentDescription="qqq"
             android:ems="10"
-            android:textColor="#CE1212" />
-            android:inputType="text" />
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textColor="#CE1212"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <!-- Password -->
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
@@ -131,7 +151,7 @@
             android:paddingLeft="10dp"
             android:paddingTop="18dp"
             android:text="Password"
-            android:textColor="#CE1212" />
+            android:textColor="#CE1212"
             android:textStyle="bold" />
 
         <EditText
@@ -139,29 +159,56 @@
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:contentDescription="eee"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:paddingLeft="10dp"
-            android:textColor="#CE1212" />
-            android:paddingRight="10dp" />
+            android:paddingRight="10dp"
+            android:textColor="#CE1212"
+            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
-        <!-- Already have an account? -->
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="18dp"
+            android:text=" Confirm Password"
+            android:textColor="#CE1212"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextText4"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="eee"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="#CE1212"
+            tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:orientation="horizontal">
 
+            <!-- Already have an account? -->
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="center_horizontal"
                 android:paddingEnd="12dp"
                 android:text="Already have an account? Log In"
                 android:textAlignment="center"
                 android:textColor="#E91E63" />
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
