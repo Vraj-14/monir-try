@@ -26,5 +26,15 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageView imageView4 = findViewById(R.id.imageView4);
+        imageView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to navigate to the LocationActivity (replace with your actual target)
+                Intent intent = new Intent(HomePage.this, Location_1.class); // Change to your desired target activity
+                startActivity(intent);
+            }
+        });
     }
 }
