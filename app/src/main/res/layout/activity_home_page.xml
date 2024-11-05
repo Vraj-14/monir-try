@@ -29,7 +29,7 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="0dp"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:adjustViewBounds="true"
@@ -55,14 +55,14 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="0dp"
+            android:layout_width="30dp"
             android:layout_height="123dp"
             android:layout_weight="1"
             android:paddingTop="15dp"
             android:paddingRight="15dp"
             android:paddingBottom="30dp"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/shopping_cart" />
+            app:srcCompat="@drawable/account_circle" />
 
     </LinearLayout>
 
@@ -71,7 +71,7 @@
         android:layout_width="335dp"
         android:layout_height="36dp"
         android:layout_marginTop="32dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/rounded_corners"
         android:visibility="visible"
         app:circularflow_defaultRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
