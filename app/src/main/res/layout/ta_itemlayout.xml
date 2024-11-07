@@ -61,6 +61,7 @@
                 android:layout_height="29dp"
                 android:paddingLeft="25dp"
                 android:text="Recommended for You"
+                android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
