@@ -1,5 +1,7 @@
 package com.example.monir_try;
 
+// Adapter For HOME PAGE -> Delicious food near you
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

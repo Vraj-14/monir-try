@@ -1,5 +1,7 @@
 package com.example.monir_try;
 
+// ITEM_MODEL FOR HOME PAGE -> Delicious food near you
+
 public class ItemModel {
 //    private  String price;
     private int imageResource; // Holds the resource ID for the image

@@ -14,6 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage extends AppCompatActivity {
+    private RecyclerView ta_RecyclerView;
+    private ta_ItemAdapter ta_itemAdapter;
+    private List<ta_ItemModel> ta_ItemList;
+
+
     private RecyclerView horizontalRecyclerView;
     private HorizontalAdapter adapter;
     private List<ItemModel> itemList;
@@ -58,13 +63,38 @@ public class HomePage extends AppCompatActivity {
 
                     case "Punjabi" :
                         intent = new Intent(HomePage.this, Pizza.class);
+                        startActivity(intent);
+                        break;//change to punjabi.class
 
+                    case "Gujarati":
+                        intent = new Intent(HomePage.this, Pizza.class); //change to gujarati.class
+                        startActivity(intent);
+                        break;
                 }
             }
         });
-
         // Set the adapter for RecyclerView
         horizontalRecyclerView.setAdapter(adapter);
+
+
+
+        //*****************************************************************************************
+
+        //Initialize the RecyclerView and set layout manager
+        ta_RecyclerView = findViewById(R.id.ta_RecyclerView);
+        ta_RecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //Inintialize data
+        ta_ItemList = new ArrayList<>();
+        //List<ta_ItemModel> itemList = new ArrayList<>();
+        ta_ItemList.add(new ta_ItemModel(R.drawable.mask_group_1, "Mummy's Kitchen", "North Indian", "1.6 Km Away", 4.5f));
+        ta_ItemList.add(new ta_ItemModel(R.drawable.mask_group_1, "Mahi Krupa Kitchen", "Punjabi", "2.5 Km Away", 3.5f));
+        ta_ItemList.add(new ta_ItemModel(R.drawable.mask_group_1, "Krishna Kitchen", "Gujarati", "5 Km Away", 2.5f));
+
+        ta_itemAdapter = new ta_ItemAdapter(this, ta_ItemList);
+        ta_RecyclerView.setAdapter(ta_itemAdapter);
+
+
         Log.d("HomePage", "Adapter is attached to RecyclerView"); // Debugging log
     }
 }
