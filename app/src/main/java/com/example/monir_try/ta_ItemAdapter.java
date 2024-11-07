@@ -32,7 +32,7 @@ public class ta_ItemAdapter extends RecyclerView.Adapter<ta_ItemAdapter.ViewHold
         return new ViewHolder(view);
     }
 
-    @Override
+    @Override //dddd
     public void onBindViewHolder(@NonNull ta_ItemAdapter.ViewHolder holder, int position) {
         ta_ItemModel item = ta_itemList.get(position);
 
