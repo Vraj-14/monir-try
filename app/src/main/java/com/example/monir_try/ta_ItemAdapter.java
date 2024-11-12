@@ -19,21 +19,29 @@ public class ta_ItemAdapter extends RecyclerView.Adapter<ta_ItemAdapter.ViewHold
 
     private Context context;
     private List<ta_ItemModel> ta_itemList;
+    private OnItemClickListener listener;
 
-    //Constructor
-    public ta_ItemAdapter(Context context, List<ta_ItemModel> itemList) {
+    // Constructor
+    public ta_ItemAdapter(Context context, List<ta_ItemModel> itemList, OnItemClickListener listener) {
         this.context = context;
         this.ta_itemList = itemList;
+        this.listener = listener;
     }
+
+    // Interface for item click handling
+    public interface OnItemClickListener {
+        void onItemClick(ta_ItemModel item);
+    }
+
     @NonNull
     @Override
-    public ta_ItemAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.ta_itemlayout, parent, false);
         return new ViewHolder(view);
     }
 
-    @Override //dddd
-    public void onBindViewHolder(@NonNull ta_ItemAdapter.ViewHolder holder, int position) {
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ta_ItemModel item = ta_itemList.get(position);
 
         // Bind data to the views in the ViewHolder
@@ -42,8 +50,17 @@ public class ta_ItemAdapter extends RecyclerView.Adapter<ta_ItemAdapter.ViewHold
         holder.itemMenuType.setText(item.getMenuType());
         holder.itemDistance.setText(item.getDistance());
         holder.itemRating.setRating(item.getRating());
-    }
 
+        // Set an onClickListener for each item
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemClick(item);
+                }
+            }
+        });
+    }
 
     @Override
     public int getItemCount() {
@@ -64,10 +81,6 @@ public class ta_ItemAdapter extends RecyclerView.Adapter<ta_ItemAdapter.ViewHold
             itemMenuType = itemView.findViewById(R.id.menu_type);
             itemDistance = itemView.findViewById(R.id.distance);
             itemRating = itemView.findViewById(R.id.ratingBar);
-
         }
     }
-
-
-
 }

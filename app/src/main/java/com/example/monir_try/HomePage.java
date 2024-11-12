@@ -18,7 +18,6 @@ public class HomePage extends AppCompatActivity {
     private ta_ItemAdapter ta_itemAdapter;
     private List<ta_ItemModel> ta_ItemList;
 
-
     private RecyclerView horizontalRecyclerView;
     private HorizontalAdapter adapter;
     private List<ItemModel> itemList;
@@ -38,7 +37,7 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        // Initialize RecyclerView and set layout manager
+        // Initialize horizontal RecyclerView and set layout manager
         horizontalRecyclerView = findViewById(R.id.horizontalRecyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         horizontalRecyclerView.setLayoutManager(layoutManager);
@@ -50,7 +49,7 @@ public class HomePage extends AppCompatActivity {
         itemList.add(new ItemModel(R.drawable.punjabi, "Punjabi"));
         itemList.add(new ItemModel(R.drawable.chinese, "Chinese"));
 
-        // Initialize the adapter and set it on the RecyclerView
+        // Initialize the adapter and set it on the horizontal RecyclerView
         adapter = new HorizontalAdapter(itemList, new HorizontalAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(ItemModel item) {
@@ -61,40 +60,62 @@ public class HomePage extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case "Punjabi" :
-                        intent = new Intent(HomePage.this, Pizza.class);
+                    case "Punjabi":
+                        intent = new Intent(HomePage.this, Pizza.class); // Change to appropriate class
                         startActivity(intent);
-                        break;//change to punjabi.class
+                        break;
 
                     case "Gujarati":
-                        intent = new Intent(HomePage.this, Pizza.class); //change to gujarati.class
+                        intent = new Intent(HomePage.this, Pizza.class); // Change to appropriate class
                         startActivity(intent);
                         break;
                 }
             }
         });
-        // Set the adapter for RecyclerView
+        // Set the adapter for horizontal RecyclerView
         horizontalRecyclerView.setAdapter(adapter);
-
-
 
         //*****************************************************************************************
 
-        //Initialize the RecyclerView and set layout manager
+        // Initialize the vertical RecyclerView and set layout manager
         ta_RecyclerView = findViewById(R.id.ta_RecyclerView);
         ta_RecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //Inintialize data
+        // Initialize data for ta_ItemList
         ta_ItemList = new ArrayList<>();
-        //List<ta_ItemModel> itemList = new ArrayList<>();
         ta_ItemList.add(new ta_ItemModel(R.drawable.mask_group_1, "Mummy's Kitchen", "North Indian", "1.6 Km Away", 4.5f));
         ta_ItemList.add(new ta_ItemModel(R.drawable.mask_group_1, "Mahi Krupa Kitchen", "Punjabi", "2.5 Km Away", 3.5f));
         ta_ItemList.add(new ta_ItemModel(R.drawable.mask_group_1, "Krishna Kitchen", "Gujarati", "5 Km Away", 2.5f));
 
-        ta_itemAdapter = new ta_ItemAdapter(this, ta_ItemList);
+        // Initialize the ta_itemAdapter and set it on the vertical RecyclerView
+        ta_itemAdapter = new ta_ItemAdapter(this, ta_ItemList, new ta_ItemAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(ta_ItemModel item) {
+                // Handle item click here
+                Intent intent;
+                switch (item.getProviderName()) {
+                    case "Mummy's Kitchen":
+                        intent = new Intent(HomePage.this, Pizza.class); // Change to actual activity
+                        startActivity(intent);
+                        break;
+
+                    case "Mahi Krupa Kitchen":
+                        intent = new Intent(HomePage.this, Pizza.class); // Change to actual activity
+                        startActivity(intent);
+                        break;
+
+                    case "Krishna Kitchen":
+                        intent = new Intent(HomePage.this, Pizza.class); // Change to actual activity
+                        startActivity(intent);
+                        break;
+                }
+            }
+        });
+
+        // Set the adapter for the vertical RecyclerView
         ta_RecyclerView.setAdapter(ta_itemAdapter);
 
-
-        Log.d("HomePage", "Adapter is attached to RecyclerView"); // Debugging log
+        // Debugging log to confirm setup
+        Log.d("HomePage", "Adapter is attached to RecyclerView");
     }
 }
