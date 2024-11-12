@@ -101,5 +101,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, SignUp.class));
             }
         });
+
+        TextView textView4 = findViewById(R.id.textView4);
+        textView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ServiceLogin.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }
