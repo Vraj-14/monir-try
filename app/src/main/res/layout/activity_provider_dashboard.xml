@@ -170,36 +170,263 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/textview42"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="'@'johnsmith"
                     android:gravity="center_horizontal"
-                    android:textColor="#000000"
-                    />
+                    android:text="'@'johnsmith"
+                    android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/textview43"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="Name"
                     android:paddingLeft="25dp"
+                    android:text="Name"
                     android:textColor="#000000"
-                    android:textSize="18sp"
-                    />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/editTextText"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
                     android:background="@drawable/rounded_corners"
                     android:ems="10"
+                    android:hint="Enter Name"
                     android:inputType="text"
-                    android:hint="Name"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"/>
+                    android:paddingLeft="10dp" />
 
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="25dp"
+                    android:text="Address"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editTextTextPostalAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:paddingLeft="25dp"
+                    android:background="@drawable/rounded_corners"
+                    android:hint="Enter Address"/>
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="25dp"
+                    android:text="Phone Number"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editTextTextPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:paddingLeft="25dp"
+                    android:background="@drawable/rounded_corners"
+                    android:hint="Enter Phone Number"
+                    />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="25dp"
+                    android:text="Email Address"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editTextTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:paddingLeft="25dp"
+                    android:background="@drawable/rounded_corners"
+                    android:hint="Enter Email"/>
+
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="25dp"
+                    android:text="Address"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editTextTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:paddingLeft="25dp"
+                    android:background="@drawable/rounded_corners"
+                    android:hint="Enter Password"
+                    />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="25dp"
+                    android:text="Delivery Area"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:paddingLeft="25dp"
+                    android:background="@drawable/rounded_corners">
+
+                    <CheckBox
+                        android:id="@+id/checkBox1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Karelibaug"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        />
+
+                    <CheckBox
+                        android:id="@+id/checkBox2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vasna"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        />
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alkapuri"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="25dp"
+                    android:text="Availability Status"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:paddingLeft="25dp"
+                    android:background="@drawable/rounded_corners">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RadioButton
+                            android:id="@+id/radioButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Active"
+                            android:textSize="16sp"
+                            android:textColor="#000000"/>
+
+                        <RadioButton
+                            android:id="@+id/radioButton2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Inactive"
+                            android:textSize="16sp"
+                            android:textColor="#000000"/>
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="25dp"
+                    android:text="Subscription Plans"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_corners"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:paddingLeft="25dp">
+
+                    <RadioButton
+                        android:id="@+id/radioButton4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Daily" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Weekly" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Monthly" />
+                </RadioGroup>
 
             </LinearLayout>
         </ScrollView>

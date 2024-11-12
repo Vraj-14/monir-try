@@ -32,7 +32,16 @@ public class HomePage extends AppCompatActivity {
         imageView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, Location_1.class); // Replace with your target activity
+                Intent intent = new Intent(HomePage.this, Location_1.class); //
+                startActivity(intent);
+            }
+        });
+
+        ImageView imageView2 = findViewById(R.id.imageView2);
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this, provider_dashboard.class); //
                 startActivity(intent);
             }
         });
@@ -114,6 +123,8 @@ public class HomePage extends AppCompatActivity {
 
         // Set the adapter for the vertical RecyclerView
         ta_RecyclerView.setAdapter(ta_itemAdapter);
+
+
 
         // Debugging log to confirm setup
         Log.d("HomePage", "Adapter is attached to RecyclerView");
