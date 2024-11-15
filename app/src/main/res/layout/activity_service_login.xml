@@ -177,7 +177,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:paddingEnd="12dp"
-                android:text="New User? Sign Up"
+                android:text="New User? Sign Up as Provider"
                 android:textColor="#E91E63" />
         </LinearLayout>
     </LinearLayout>
