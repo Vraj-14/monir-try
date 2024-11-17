@@ -25,7 +25,7 @@ public class SignUp extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private FirebaseFirestore firestore;
-    private EditText editTextText1, editTextText2, editTextText3;
+    private EditText editTextText1, editTextText2, editTextText3, editTextConfirmPassword;
     private Button buttonlg;
     private TextView textView8;
 
@@ -42,6 +42,7 @@ public class SignUp extends AppCompatActivity {
         editTextText1 = findViewById(R.id.editTextText1); // user name
         editTextText2 = findViewById(R.id.editTextText2); // email
         editTextText3 = findViewById(R.id.editTextText3); // password
+        editTextConfirmPassword = findViewById(R.id.editTextText4); // confirm password
         buttonlg = findViewById(R.id.buttonlg); // sign up button
         textView8 = findViewById(R.id.textView8); // login text
 
@@ -52,6 +53,7 @@ public class SignUp extends AppCompatActivity {
                 // Get input values from fields
                 String userEmail = editTextText2.getText().toString().trim();
                 String userPassword = editTextText3.getText().toString().trim();
+                String confirmPassword = editTextConfirmPassword.getText().toString().trim();
                 String userName = editTextText1.getText().toString().trim();
 
                 // Check if fields are empty
@@ -59,8 +61,14 @@ public class SignUp extends AppCompatActivity {
                     editTextText2.setError("Email cannot be empty");
                 } else if (userPassword.isEmpty()) {
                     editTextText3.setError("Password cannot be empty");
+                } else if (confirmPassword.isEmpty()) {
+                    editTextConfirmPassword.setError("Confirm Password cannot be empty");
                 } else if (userName.isEmpty()) {
                     editTextText1.setError("Name cannot be empty");
+                } else if (!userPassword.equals(confirmPassword)) {
+                    // Check if password and confirm password match
+                    editTextConfirmPassword.setError("Passwords do not match");
+                    Toast.makeText(SignUp.this, "Password and Confirm Password do not match", Toast.LENGTH_SHORT).show();
                 } else {
                     // Proceed with Firebase sign-up
                     auth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
