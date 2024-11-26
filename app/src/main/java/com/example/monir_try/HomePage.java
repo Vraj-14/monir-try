@@ -37,11 +37,12 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+        // profile logo to user profile screen
         ImageView imageView2 = findViewById(R.id.imageView2);
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, provider_dashboard.class); //
+                Intent intent = new Intent(HomePage.this, user_account.class); //
                 startActivity(intent);
             }
         });
@@ -84,7 +85,7 @@ public class HomePage extends AppCompatActivity {
         // Set the adapter for horizontal RecyclerView
         horizontalRecyclerView.setAdapter(adapter);
 
-        //*****************************************************************************************
+//****************************************************************************************************
 
         // Initialize the vertical RecyclerView and set layout manager
         ta_RecyclerView = findViewById(R.id.ta_RecyclerView);
@@ -102,18 +103,18 @@ public class HomePage extends AppCompatActivity {
             public void onItemClick(ta_ItemModel item) {
                 // Handle item click here
                 Intent intent;
-                switch (item.getProviderName()) {
-                    case "Mummy's Kitchen":
+                    switch (item.getProviderName()) {
+                        case "Mummy's Kitchen":
+                            intent = new Intent(HomePage.this, Pizza.class); // Change to actual activity
+                            startActivity(intent);
+                            break;
+
+                        case "Mahi Krupa Kitchen":
                         intent = new Intent(HomePage.this, Pizza.class); // Change to actual activity
                         startActivity(intent);
                         break;
 
-                    case "Mahi Krupa Kitchen":
-                        intent = new Intent(HomePage.this, Pizza.class); // Change to actual activity
-                        startActivity(intent);
-                        break;
-
-                    case "Krishna Kitchen":
+                        case "Krishna Kitchen":
                         intent = new Intent(HomePage.this, Pizza.class); // Change to actual activity
                         startActivity(intent);
                         break;
@@ -123,6 +124,9 @@ public class HomePage extends AppCompatActivity {
 
         // Set the adapter for the vertical RecyclerView
         ta_RecyclerView.setAdapter(ta_itemAdapter);
+
+//*********************************************************************************************************
+
 
 
 

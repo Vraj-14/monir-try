@@ -23,7 +23,7 @@ public class provider_dashboard extends AppCompatActivity {
         imageView10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(provider_dashboard.this, HomePage.class);
+                Intent intent = new Intent(provider_dashboard.this, ServiceLogin.class);
                 startActivity(intent);
             }
         });
