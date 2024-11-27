@@ -2,23 +2,19 @@ package com.example.monir_try;
 
 import android.os.Bundle;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.TextView;
-import androidx.annotation.NonNull;
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Overview extends AppCompatActivity {
+public class providers extends AppCompatActivity {
+
     private RecyclerView kpRecyclerView;
     private kp_ItemAdapter kpAdapter;
     private List<kp_ItemModel> kpItemList;
@@ -30,7 +26,7 @@ public class Overview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_overview);
+        setContentView(R.layout.activity_providers);
 
         // Initialize RecyclerView for kitchen Partner
         kpRecyclerView = findViewById(R.id.kp_RecyclerView);
@@ -62,5 +58,4 @@ public class Overview extends AppCompatActivity {
 
 
     }
-
 }

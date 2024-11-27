@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class kp_ItemAdapter extends RecyclerView.Adapter<kp_ItemAdapter.ViewHolder> {
+
     private List<kp_ItemModel> itemList;
     private Context context;
 
@@ -49,8 +50,6 @@ public class kp_ItemAdapter extends RecyclerView.Adapter<kp_ItemAdapter.ViewHold
             itemimage = itemView.findViewById(R.id.imageView);
         }
     }
-
-
 
 
 }

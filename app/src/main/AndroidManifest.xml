@@ -13,9 +13,14 @@
         android:theme="@style/Theme.Monirtry"
         tools:targetApi="31">
         <activity
+            android:name=".providers"
+            android:exported="false" />
+        <activity
+            android:name=".arrow"
+            android:exported="false" />
+        <activity
             android:name=".user_profile"
             android:exported="false" />
-
         <activity
             android:name=".provider_dashboard"
             android:exported="false" />
@@ -38,7 +43,7 @@
             android:name=".SignUp"
             android:exported="false" />
         <activity
-            android:name=".Overview"
+            android:name=".tiffin_provider"
             android:exported="false" />
         <activity
             android:name=".location"

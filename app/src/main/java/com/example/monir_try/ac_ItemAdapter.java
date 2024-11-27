@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ac_ItemAdapter  extends RecyclerView.Adapter<ac_ItemAdapter.ViewHolder>   {
+
+public class ac_ItemAdapter extends RecyclerView.Adapter<ac_ItemAdapter.ViewHolder> {
 
     private List<ac_ItemModel> ac_itemList;
 
@@ -56,7 +57,7 @@ public class ac_ItemAdapter  extends RecyclerView.Adapter<ac_ItemAdapter.ViewHol
 
     @Override
     public int getItemCount() {
-       return ac_itemList.size();
+        return ac_itemList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
@@ -81,4 +82,5 @@ public class ac_ItemAdapter  extends RecyclerView.Adapter<ac_ItemAdapter.ViewHol
 
         }
     }
+
 }

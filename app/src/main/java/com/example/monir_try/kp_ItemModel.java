@@ -1,6 +1,7 @@
 package com.example.monir_try;
 
 public class kp_ItemModel {
+
     private int imageResId;
 
     // Constructor
@@ -11,4 +12,5 @@ public class kp_ItemModel {
     public int getImageResId(){
         return imageResId;
     }
+
 }

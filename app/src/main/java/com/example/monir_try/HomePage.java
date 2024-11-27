@@ -22,6 +22,8 @@ public class HomePage extends AppCompatActivity {
     private HorizontalAdapter adapter;
     private List<ItemModel> itemList;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +70,7 @@ public class HomePage extends AppCompatActivity {
                 Intent intent;
                 switch (item.getItemName()) {
                     case "Pizza":
-                        intent = new Intent(HomePage.this, Pizza.class);
+                        intent = new Intent(HomePage.this, providers.class);
                         startActivity(intent);
                         break;
 
@@ -95,7 +97,7 @@ public class HomePage extends AppCompatActivity {
 
         // Initialize data for ta_ItemList
         ta_ItemList = new ArrayList<>();
-        ta_ItemList.add(new ta_ItemModel(R.drawable.mask_group_1, "Mummy's Kitchen", "North Indian", "1.6 Km Away", 4.5f));
+        ta_ItemList.add(new ta_ItemModel(R.drawable.mask_group_1, "Radhe Krishna Kitchen", "North Indian", "1.6 Km Away", 4.5f));
         ta_ItemList.add(new ta_ItemModel(R.drawable.mask_group_1, "Mahi Krupa Kitchen", "Punjabi", "2.5 Km Away", 3.5f));
         ta_ItemList.add(new ta_ItemModel(R.drawable.mask_group_1, "Krishna Kitchen", "Gujarati", "5 Km Away", 2.5f));
 
@@ -104,23 +106,31 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onItemClick(ta_ItemModel item) {
                 // Handle item click here
-                Intent intent;
-                    switch (item.getProviderName()) {
-                        case "Mummy's Kitchen":
-                            intent = new Intent(HomePage.this, Overview.class); // Change to actual activity
-                            startActivity(intent);
-                            break;
-
-                        case "Mahi Krupa Kitchen":
-                        intent = new Intent(HomePage.this, Pizza.class); // Change to actual activity
-                        startActivity(intent);
+                Intent intentt;
+                switch (item.getProviderName()) {
+                    case "Radhe Krishna Kitchen":
+                        intentt = new Intent(HomePage.this, providers.class);   // Change to actual activity
+                        startActivity(intentt);
                         break;
 
-                        case "Krishna Kitchen":
-                        intent = new Intent(HomePage.this, Pizza.class); // Change to actual activity
-                        startActivity(intent);
+                    case "Mahi Krupa Kitchen":
+                        intentt = new Intent(HomePage.this, Pizza.class);   // Change to actual activity
+                        startActivity(intentt);
                         break;
+
+                    case "Krishna Kitchen":
+                        intentt = new Intent(HomePage.this, Pizza.class); // Change to actual activity
+                        startActivity(intentt);
+                        break;
+
+                    default:
+                        Log.e("HomePage", "Unhandled provider name: " + item.getProviderName());
+                        break;
+
+
                 }
+
+                Log.d("HomePage", "Clicked on: " + item.getProviderName());
             }
         });
 
@@ -128,6 +138,7 @@ public class HomePage extends AppCompatActivity {
         ta_RecyclerView.setAdapter(ta_itemAdapter);
 
 //*********************************************************************************************************
+
 
 
 
