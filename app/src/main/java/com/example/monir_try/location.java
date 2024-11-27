@@ -3,6 +3,7 @@ package com.example.monir_try;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -35,8 +36,13 @@ public class location extends AppCompatActivity {
         areaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         areaSpinner.setAdapter(areaAdapter);
 
-        Button backButton = findViewById(R.id.buttonback);
 
+
+
+
+
+
+        Button backButton = findViewById(R.id.buttonback);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
 

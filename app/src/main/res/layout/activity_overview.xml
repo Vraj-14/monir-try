@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#EEEBDD"
     android:paddingTop="5dp"
-    tools:context=".Overview">
+    >
 
     <LinearLayout
         android:id="@+id/linearLayout6"
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="309dp" />
+        app:layout_constraintGuide_end="307dp" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -92,6 +92,7 @@
         android:id="@+id/textView"
         android:layout_width="226dp"
         android:layout_height="52dp"
+        android:layout_marginTop="332dp"
         android:fontFamily="@font/days_one"
         android:gravity="center"
         android:text="Mummy's Kitchen"
@@ -99,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="426dp" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
 
     <ScrollView
         android:layout_width="409dp"
@@ -170,16 +171,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_corners"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp"
-                android:orientation="vertical">
+                android:layout_marginEnd="25dp">
 
                 <TextView
                     android:id="@+id/textView18"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/days_one"
-                    android:paddingLeft="38dp"
-                    android:text="Delivery info"
+                    android:textStyle="bold"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="20dp"
+                    android:text="Delivery Timings"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -188,7 +193,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:paddingLeft="38dp"
+                    android:paddingLeft="20dp"
                     android:paddingTop="7dp"
                     android:text="Breakfast :  8:00 am  to 11:30 am
                                  \n\nLunch        : 12:00 pm  to 01:30 pm
@@ -197,54 +202,95 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView20"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/days_one"
-                android:paddingLeft="38dp"
-                android:text="Menu"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_corners"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp">
 
-            <ScrollView
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="20dp"
+                    android:text="Today's Menu"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="35dp"
+                    android:text="Lunch : "
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textView42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="75dp"
+                    android:text=" Masala Bhindi \n Choli \n Roti \n Dal Fry \n Jeera Rice \n Papad"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_corners"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:gravity="center_vertical">
 
-
+                    <!-- Title Text -->
                     <TextView
-                        android:id="@+id/textView21"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:paddingLeft="38dp"
-                        android:paddingTop="7dp"
-                        android:text="Monday"
+                        android:id="@+id/titleText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ala carte Menu"
                         android:textColor="#000000"
-                        android:textSize="14sp"></TextView>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-
-                    <TextView
-                        android:id="@+id/textView22"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="sans-serif-medium"
-                        android:paddingLeft="38dp"
-                        android:paddingTop="7dp"
-                        android:text="Monday :"
-                        android:textColor="#000000"
-                        android:textSize="14sp" />
-
+                    <!-- Spinner for Dropdown -->
 
                 </LinearLayout>
-            </ScrollView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ac_RecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"/>
+
+
+            </LinearLayout>
 
 
         </LinearLayout>

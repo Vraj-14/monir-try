@@ -37,13 +37,15 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        // profile logo to user profile screen
-        ImageView imageView2 = findViewById(R.id.imageView2);
-        imageView2.setOnClickListener(new View.OnClickListener() {
+
+        ImageView imageview20 = findViewById(R.id.imageView20);
+        imageview20.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, user_account.class); //
+            public void onClick(View view) {
+                Log.d("HomePage", "Navigating to user_profile...");
+                Intent intent = new Intent(HomePage.this, com.example.monir_try.user_profile.class);
                 startActivity(intent);
+                Log.d("HomePage", "Intent to user_profile started!");
             }
         });
 
@@ -105,7 +107,7 @@ public class HomePage extends AppCompatActivity {
                 Intent intent;
                     switch (item.getProviderName()) {
                         case "Mummy's Kitchen":
-                            intent = new Intent(HomePage.this, Pizza.class); // Change to actual activity
+                            intent = new Intent(HomePage.this, Overview.class); // Change to actual activity
                             startActivity(intent);
                             break;
 
@@ -126,6 +128,7 @@ public class HomePage extends AppCompatActivity {
         ta_RecyclerView.setAdapter(ta_itemAdapter);
 
 //*********************************************************************************************************
+
 
 
 

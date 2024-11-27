@@ -4,41 +4,66 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class ServiceLogin extends AppCompatActivity {
+
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_service_login);
 
-        Button loginButton = findViewById(R.id.buttonlg);
+        db = FirebaseFirestore.getInstance();
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
+        EditText emailEditText = findViewById(R.id.editTextText2);
+        EditText passwordEditText = findViewById(R.id.editTextText3);
+        Button checkButton = findViewById(R.id.buttonlg);
 
-            public void onClick(View v) {
-                // Create an Intent to navigate to the ServiceLogin activity
-                Intent intent = new Intent(ServiceLogin.this, location.class);
-                startActivity(intent);
-            }
-        });
-
-        Button button = findViewById(R.id.buttonlg);
-        button.setOnClickListener(new View.OnClickListener() {
+        checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ServiceLogin.this, provider_dashboard.class); //
-                startActivity(intent);
+                String enteredEmail = emailEditText.getText().toString().trim();
+                String enteredPassword = passwordEditText.getText().toString().trim();
+
+                if (enteredEmail.isEmpty() || enteredPassword.isEmpty()) {
+                    Toast.makeText(ServiceLogin.this, "Please enter both email and password", Toast.LENGTH_SHORT).show();
+                } else {
+                    authenticateUser(enteredEmail, enteredPassword);
+                }
             }
         });
+    }
+
+    private void authenticateUser(String email, String password) {
+        db.collection("providers")
+                .whereEqualTo("email", email)
+                .whereEqualTo("password", password)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        QuerySnapshot querySnapshot = task.getResult();
+                        if (!querySnapshot.isEmpty()) {
+                            // Login successful
+                            Toast.makeText(ServiceLogin.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(ServiceLogin.this, provider_dashboard.class);
+                            startActivity(intent);
+                            finish(); // Close login activity
+                        } else {
+                            // No matching document found
+                            Toast.makeText(ServiceLogin.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(ServiceLogin.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

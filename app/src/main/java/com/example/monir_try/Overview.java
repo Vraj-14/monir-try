@@ -6,7 +6,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,11 +23,16 @@ public class Overview extends AppCompatActivity {
     private kp_ItemAdapter kpAdapter;
     private List<kp_ItemModel> kpItemList;
 
+    private RecyclerView acRecyclerView;
+    private ac_ItemAdapter acAdapter;
+    private List<ac_ItemModel> acItemList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overview);
 
+        // Initialize RecyclerView for kitchen Partner
         kpRecyclerView = findViewById(R.id.kp_RecyclerView);
         kpRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -38,6 +45,20 @@ public class Overview extends AppCompatActivity {
 
         kpAdapter = new kp_ItemAdapter(this, kpItemList);
         kpRecyclerView.setAdapter(kpAdapter);
+
+
+        // Initialize Recyclerviews for ALa Carta
+        acRecyclerView = findViewById(R.id.ac_RecyclerView);
+        acRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        acItemList = new ArrayList<>();
+
+        //Add items to the list
+        acItemList.add(new ac_ItemModel(R.drawable.achari_aloo, "Achari Aloo", "₹100", 0));
+        acItemList.add(new ac_ItemModel(R.drawable.butter_milk, "Butter Milk", "₹50", 0));
+
+        acAdapter = new ac_ItemAdapter(acItemList);
+        acRecyclerView.setAdapter(acAdapter);
 
 
     }
