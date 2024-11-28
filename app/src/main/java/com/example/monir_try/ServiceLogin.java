@@ -67,14 +67,7 @@ public class ServiceLogin extends AppCompatActivity {
                     }
                 });
 
-        Button buttonlg = findViewById(R.id.buttonlg);
-        buttonlg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ServiceLogin.this, HomePage.class); //
-                startActivity(intent);
-            }
-        });
+
 
         TextView textView8 = findViewById(R.id.textView8);
         textView8.setOnClickListener(new View.OnClickListener() {
