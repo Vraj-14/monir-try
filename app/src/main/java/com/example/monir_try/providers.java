@@ -30,7 +30,8 @@ public class providers extends AppCompatActivity {
 
         // Initialize RecyclerView for kitchen Partner
         kpRecyclerView = findViewById(R.id.kp_RecyclerView);
-        kpRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        kpRecyclerView.setLayoutManager(layoutManager);
 
         kpItemList = new ArrayList<>();
 
@@ -45,7 +46,8 @@ public class providers extends AppCompatActivity {
 
         // Initialize Recyclerviews for ALa Carta
         acRecyclerView = findViewById(R.id.ac_RecyclerView);
-        acRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManagerr = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        acRecyclerView.setLayoutManager(layoutManagerr);
 
         acItemList = new ArrayList<>();
 

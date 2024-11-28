@@ -70,7 +70,7 @@ public class HomePage extends AppCompatActivity {
                 Intent intent;
                 switch (item.getItemName()) {
                     case "Pizza":
-                        intent = new Intent(HomePage.this, providers.class);
+                        intent = new Intent(HomePage.this, MainActivity2.class);
                         startActivity(intent);
                         break;
 
@@ -109,7 +109,7 @@ public class HomePage extends AppCompatActivity {
                 Intent intentt;
                 switch (item.getProviderName()) {
                     case "Radhe Krishna Kitchen":
-                        intentt = new Intent(HomePage.this, providers.class);   // Change to actual activity
+                        intentt = new Intent(HomePage.this, MainActivity2.class);   // Change to actual activity
                         startActivity(intentt);
                         break;
 
