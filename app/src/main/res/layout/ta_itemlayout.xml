@@ -71,7 +71,8 @@
                 android:layout_height="30dp"
                 android:paddingLeft="25dp"
                 android:text="menu type"
-                android:textColor="#808080" />
+                android:textColor="#808080"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/distance"
@@ -79,7 +80,8 @@
                 android:layout_height="30dp"
                 android:paddingStart="25dp"
                 android:text="distance"
-                android:textColor="#808080" />
+                android:textColor="#808080"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

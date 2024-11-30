@@ -37,11 +37,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:paddingLeft="15dp"
                 android:paddingTop="30dp"
                 android:paddingBottom="10dp"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/add_location_alt" />
+                app:srcCompat="@drawable/vector_12" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -148,7 +147,8 @@
                             android:fontFamily="@font/days_one"
                             android:gravity="center"
                             android:text="Radhe Krishna Kitchen"
-                            android:textSize="20sp" />
+                            android:textSize="20sp"
+                            android:textColor="#000000"/>
 
                         <TextView
                             android:id="@+id/textView57"
@@ -159,7 +159,8 @@
                             android:gravity="center"
                             android:paddingTop="5dp"
                             android:text="Daily / Weekly / Monthly"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:textColor="#000000"/>
 
                         <TextView
                             android:id="@+id/textView58"
@@ -192,6 +193,7 @@
                                 android:fontFamily="sans-serif-medium"
                                 android:gravity="center"
                                 android:paddingRight="27dp"
+                                android:textColor="#000000"
                                 android:text="4.1 Starts in  462  Reviews" />
 
                             <ImageView
@@ -281,6 +283,17 @@
                                 android:textColor="#000000"
                                 android:textSize="12sp" />
 
+                            <Button
+                                android:id="@+id/button2"
+                                android:layout_width="101dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_margin="20dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#CE1212"
+                                android:text="Add"
+                                android:textColor="@color/white" />
+
                             <TextView
                                 android:id="@+id/textView49"
                                 android:layout_width="match_parent"
@@ -303,29 +316,18 @@
                                 android:textColor="#000000"
                                 android:textSize="12sp" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
+                            <Button
+                                android:id="@+id/button3"
+                                android:layout_width="101dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_margin="20dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#CE1212"
+                                android:text="Add"
+                                android:textColor="@color/white" />
 
-                                <Button
-                                    android:id="@+id/button2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="20dp"
-                                    android:layout_weight="1"
-                                    android:backgroundTint="#CE1212"
-                                    android:text="Lunch" />
 
-                                <Button
-                                    android:id="@+id/button4"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="20dp"
-                                    android:layout_weight="1"
-                                    android:backgroundTint="#CE1212"
-                                    android:text="Dinner" />
-                            </LinearLayout>
 
 
                         </LinearLayout>
@@ -333,17 +335,17 @@
                         <TextView
                             android:id="@+id/textView59"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Ala Carte Menu"
-                            android:textStyle="bold"
-                            android:textSize="18dp"
-                            android:textColor="#000000"
-                            android:background="@drawable/rounded_corners"
+                            android:layout_height="36dp"
                             android:layout_marginStart="25dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginEnd="25dp"
+                            android:background="@drawable/rounded_corners"
+                            android:paddingLeft="20dp"
                             android:paddingTop="5dp"
-                            android:paddingLeft="20dp"/>
+                            android:text="Ala Carte Menu"
+                            android:textColor="#000000"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -391,6 +393,7 @@
                                                 android:paddingTop="5dp"
                                                 android:paddingLeft="20dp"
                                                 android:text="Butter Milk"
+                                                android:textColor="#000000"
                                                 android:textStyle="bold" />
 
                                             <TextView
@@ -457,9 +460,13 @@
                             android:id="@+id/button6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="20dp"
                             android:backgroundTint="#CE1212"
                             android:text="Subscribe"
+                            android:textColor="#FFFFFF"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginEnd="40dp"
                             android:textSize="18sp" />
 
                     </LinearLayout>

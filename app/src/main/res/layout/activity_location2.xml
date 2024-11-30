@@ -41,6 +41,7 @@
             android:layout_marginTop="20dp"
             android:gravity="center_vertical"
             android:paddingLeft="40dp"
+            android:textColor="#000000"
             android:text="Select a Location"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -96,7 +97,7 @@
                 <TextView
                     android:id="@+id/textView29"
                     android:layout_width="213dp"
-                    android:layout_height="30dp"
+                    android:layout_height="39dp"
                     android:hint="Using GPS for Location service"
                     android:paddingLeft="10dp"
                     android:textColorHint="#000000" />

@@ -26,7 +26,7 @@ public class MainActivity2 extends AppCompatActivity {
         imageView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, Location_1.class); //
+                Intent intent = new Intent(MainActivity2.this, HomePage.class); //
                 startActivity(intent);
             }
         });
@@ -51,8 +51,8 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-        Button button4 = findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
+        Button button3 = findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity2.this, cart.class); //
@@ -64,7 +64,7 @@ public class MainActivity2 extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, cart.class); //
+                Intent intent = new Intent(MainActivity2.this, plan_selection.class); //
                 startActivity(intent);
             }
         });

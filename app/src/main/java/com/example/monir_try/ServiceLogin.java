@@ -78,6 +78,15 @@ public class ServiceLogin extends AppCompatActivity {
             }
         });
 
+        TextView textView3 = findViewById(R.id.textView3);
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ServiceLogin.this, MainActivity.class); //
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

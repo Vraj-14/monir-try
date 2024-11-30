@@ -59,6 +59,7 @@
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="808dp"
+        android:layout_marginTop="20dp"
         android:background="#EEEBDD"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,11 +98,11 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:background="@drawable/rounded_corners"
+                    android:layout_marginStart="25dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="25dp"
-                    android:layout_marginStart="25dp">
+                    android:background="@drawable/rounded_corners"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textView55"
@@ -127,11 +128,11 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
                             android:gravity="center_vertical"
+                            android:orientation="horizontal"
                             android:paddingStart="25dp"
-                            android:paddingEnd="25dp"
                             android:paddingTop="10dp"
+                            android:paddingEnd="25dp"
                             android:paddingBottom="10dp">
 
                             <!-- TextView for "Lunch" -->
@@ -153,9 +154,9 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.3"
+                                android:gravity="end"
                                 android:paddingStart="10dp"
                                 android:paddingEnd="10dp"
-                                android:gravity="end"
                                 android:text="Rs. 100"
                                 android:textColor="#000000"
                                 android:textSize="18sp"
@@ -173,11 +174,11 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
                             android:gravity="center_vertical"
+                            android:orientation="horizontal"
                             android:paddingStart="25dp"
-                            android:paddingEnd="25dp"
                             android:paddingTop="10dp"
+                            android:paddingEnd="25dp"
                             android:paddingBottom="10dp">
 
                             <!-- TextView for "Lunch" -->
@@ -199,9 +200,9 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.3"
+                                android:gravity="end"
                                 android:paddingStart="10dp"
                                 android:paddingEnd="10dp"
-                                android:gravity="end"
                                 android:text="Rs. 100"
                                 android:textColor="#000000"
                                 android:textSize="18sp"
@@ -209,7 +210,6 @@
                         </LinearLayout>
 
                     </LinearLayout>
-
 
 
                 </LinearLayout>
@@ -224,6 +224,7 @@
                     android:layout_marginBottom="30dp"
                     android:backgroundTint="#CE1212"
                     android:text="Proceed To Pay"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
 

@@ -198,7 +198,8 @@
                     android:ems="10"
                     android:hint="Enter Name"
                     android:inputType="text"
-                    android:paddingLeft="10dp" />
+                    android:paddingLeft="10dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:id="@+id/textView25"
@@ -214,14 +215,15 @@
                     android:id="@+id/editTextTextPostalAddress"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:ems="10"
-                    android:inputType="textPostalAddress"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="25dp"
-                    android:paddingLeft="25dp"
                     android:background="@drawable/rounded_corners"
-                    android:hint="Enter Address"/>
+                    android:ems="10"
+                    android:hint="Enter Address"
+                    android:inputType="textPostalAddress"
+                    android:paddingLeft="25dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:id="@+id/textView26"
@@ -237,15 +239,15 @@
                     android:id="@+id/editTextTextPhoneNumber"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:ems="10"
-                    android:inputType="phone"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="25dp"
-                    android:paddingLeft="25dp"
                     android:background="@drawable/rounded_corners"
+                    android:ems="10"
                     android:hint="Enter Phone Number"
-                    />
+                    android:inputType="phone"
+                    android:paddingLeft="25dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:id="@+id/textView27"
@@ -261,14 +263,15 @@
                     android:id="@+id/editTextTextEmail"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:ems="10"
-                    android:inputType="textEmailAddress"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="25dp"
-                    android:paddingLeft="25dp"
                     android:background="@drawable/rounded_corners"
-                    android:hint="Enter Email"/>
+                    android:ems="10"
+                    android:hint="Enter Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="25dp"
+                    android:textColor="#000000" />
 
 
                 <TextView
@@ -285,15 +288,15 @@
                     android:id="@+id/editTextTextPassword"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:ems="10"
-                    android:inputType="textPassword"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="25dp"
-                    android:paddingLeft="25dp"
                     android:background="@drawable/rounded_corners"
+                    android:ems="10"
                     android:hint="Enter Password"
-                    />
+                    android:inputType="textPassword"
+                    android:paddingLeft="25dp"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:id="@+id/textView29"

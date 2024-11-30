@@ -75,12 +75,12 @@ public class HomePage extends AppCompatActivity {
                         break;
 
                     case "Punjabi":
-                        intent = new Intent(HomePage.this, Pizza.class); // Change to appropriate class
+                        intent = new Intent(HomePage.this, MainActivity2.class); // Change to appropriate class
                         startActivity(intent);
                         break;
 
                     case "Gujarati":
-                        intent = new Intent(HomePage.this, Pizza.class); // Change to appropriate class
+                        intent = new Intent(HomePage.this, MainActivity2.class); // Change to appropriate class
                         startActivity(intent);
                         break;
                 }
@@ -114,12 +114,12 @@ public class HomePage extends AppCompatActivity {
                         break;
 
                     case "Mahi Krupa Kitchen":
-                        intentt = new Intent(HomePage.this, Pizza.class);   // Change to actual activity
+                        intentt = new Intent(HomePage.this, MainActivity2.class);   // Change to actual activity
                         startActivity(intentt);
                         break;
 
                     case "Krishna Kitchen":
-                        intentt = new Intent(HomePage.this, Pizza.class); // Change to actual activity
+                        intentt = new Intent(HomePage.this, MainActivity2.class); // Change to actual activity
                         startActivity(intentt);
                         break;
 
