@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "monir-try"
 include(":app")
- 
+include(":stock")
