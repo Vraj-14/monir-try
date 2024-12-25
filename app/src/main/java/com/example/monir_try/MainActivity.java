@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private EditText editTextText2,editTextText3;
-    private Button buttonlg;
-    private TextView textView7,textView8;
+    private Button buttonlg; //Login Button
+    private TextView textView7,textView8; // Forgot password & Signup
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         auth = FirebaseAuth.getInstance();
-        editTextText2= findViewById(R.id.editTextText2);
-        editTextText3= findViewById(R.id.editTextText3);
-        buttonlg = findViewById(R.id.buttonlg);
+        editTextText2= findViewById(R.id.editTextText2); //email
+        editTextText3= findViewById(R.id.editTextText3); // password
+        buttonlg = findViewById(R.id.buttonlg); // Login Button
         textView8 = findViewById(R.id.textView8); //sign up
         textView7 = findViewById(R.id.textView7); //forgot password
 
