@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.view.View;
 import android.content.Intent;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,15 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomePage.this, Location_1.class); //
+                startActivity(intent);
+            }
+        });
+
+        TextView textView11 = findViewById(R.id.textView11);
+        textView11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this, provider_home.class);
                 startActivity(intent);
             }
         });

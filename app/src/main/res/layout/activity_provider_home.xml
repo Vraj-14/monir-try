@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".provider_home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EEEBDD"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:background="#CE1212"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView4"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:paddingLeft="15dp"-->
+<!--                android:paddingTop="30dp"-->
+<!--                android:paddingBottom="10dp"-->
+<!--                android:scaleType="centerInside"-->
+<!--                app:srcCompat="@drawable/add_location_alt" />-->
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:paddingTop="25dp"
+                android:text="Home Harvest"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="28.6sp"
+                android:textStyle="bold" />
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView2"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:paddingTop="15dp"-->
+<!--                android:paddingRight="15dp"-->
+<!--                android:scaleType="centerInside"-->
+<!--                app:srcCompat="@drawable/account_circle" />-->
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/provider_RecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -279,9 +279,10 @@
                                 android:textStyle="bold"
                                 android:paddingTop="10dp"
                                 android:paddingLeft="75dp"
-                                android:text=" Masala Bhindi \n Choli \n Roti \n Dal Fry \n Jeera Rice \n Papad"
+                                android:text=" Loading..."
                                 android:textColor="#000000"
-                                android:textSize="12sp" />
+                                android:textSize="12sp"
+                                android:breakStrategy="simple"/>
 
                             <Button
                                 android:id="@+id/button2"
@@ -312,7 +313,7 @@
                                 android:textStyle="bold"
                                 android:paddingTop="10dp"
                                 android:paddingLeft="75dp"
-                                android:text=" Chole Chana \n Paneer Tikka \n Roti \n Dal Fry \n Jeera Rice \n Papad"
+                                android:text="Loading..."
                                 android:textColor="#000000"
                                 android:textSize="12sp" />
 

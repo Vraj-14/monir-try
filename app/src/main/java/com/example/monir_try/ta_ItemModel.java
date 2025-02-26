@@ -1,6 +1,6 @@
 package com.example.monir_try;
 
-// ITEM MODEL FOR HOME PAE -> Tiffin's Available
+// ITEM MODEL FOR HOME PAGE -> Tiffin's Available
 
 public class ta_ItemModel {
     private int imageResId;
