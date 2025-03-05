@@ -19,35 +19,39 @@
 
         <ImageView
             android:id="@+id/imageView33"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.30"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/image_10" />
 
         <TextView
             android:id="@+id/textView70"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.70"
+            android:layout_weight="0.50"
             android:text="Total Orders"
             android:textStyle="bold"
             android:textColor="@color/black"
-           android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
+
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/textView80"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.10"
+            android:layout_weight="0.20"
             android:text="23"
             android:textColor="@color/black"
             android:layout_marginTop="20dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:textSize="20sp"/>
+
 
 
     </LinearLayout>

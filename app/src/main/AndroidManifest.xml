@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Monirtry"
         tools:targetApi="31">
         <activity
+            android:name=".provider_view_item_list"
+            android:exported="false" />
+        <activity
+            android:name=".provider_add_new_item"
+            android:exported="false" />
+        <activity
+            android:name=".provider_weekly_plan"
+            android:exported="false" />
+        <activity
+            android:name=".Provider_MainMenu"
+            android:exported="false" />
+        <activity
             android:name=".provider_home"
             android:exported="false" />
         <activity

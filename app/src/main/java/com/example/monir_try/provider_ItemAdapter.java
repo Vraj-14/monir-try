@@ -45,7 +45,8 @@ public class provider_ItemAdapter extends RecyclerView.Adapter<provider_ItemAdap
         // Bind data to the views in the ViewHolder
         holder.itemImage.setImageResource(item.getImageResId());
         holder.itemOrder.setText(item.getOrder());
-        holder.itemAmount.setText(item.getAmount());
+        holder.itemAmount.setText(String.valueOf(item.getAmount()));
+
 
         // Set OnClickListener for each item
         holder.itemView.setOnClickListener(view -> {

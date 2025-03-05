@@ -27,8 +27,9 @@ public class ServiceLogin extends AppCompatActivity {
 
         EditText emailEditText = findViewById(R.id.editTextText2);
         EditText passwordEditText = findViewById(R.id.editTextText3);
-        Button checkButton = findViewById(R.id.buttonlg);
 
+
+        Button checkButton = findViewById(R.id.buttonlg);
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,11 +53,11 @@ public class ServiceLogin extends AppCompatActivity {
             }
         });
 
-        TextView textView3 = findViewById(R.id.textView3);
+        TextView textView3 = findViewById(R.id.textView3); //User Login Text
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ServiceLogin.this, SignUp.class); //
+                Intent intent = new Intent(ServiceLogin.this, MainActivity.class); //
                 startActivity(intent);
             }
         });
@@ -74,7 +75,7 @@ public class ServiceLogin extends AppCompatActivity {
                         if (!querySnapshot.isEmpty()) {
                             // Login successful
                             Toast.makeText(ServiceLogin.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(ServiceLogin.this, provider_dashboard.class);
+                            Intent intent = new Intent(ServiceLogin.this, provider_home.class);
                             startActivity(intent);
                             finish(); // Close login activity
                         } else {

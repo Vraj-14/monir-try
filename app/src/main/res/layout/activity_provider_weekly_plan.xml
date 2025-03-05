@@ -5,12 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".provider_home">
+    android:background="#EEEBDD"
+    tools:context=".provider_weekly_plan">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EEEBDD"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,8 +31,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0"
-            >
+            app:layout_constraintVertical_bias="0">
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -51,24 +52,43 @@
                 android:layout_weight="9"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
-                android:paddingTop="25dp"
+                android:paddingTop="20dp"
+                android:paddingRight="45dp"
                 android:text="Home Harvest"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="28.6sp"
                 android:textStyle="bold" />
+        </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/account_circle" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/rounded_corners">
 
+            <TextView
+                android:id="@+id/textView86"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekly Plan Overview"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/black"
+                android:paddingTop="10dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"/>
 
+            <TextView
+                android:id="@+id/textView87"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dates To be added here"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"/>
         </LinearLayout>
 
         <ScrollView
@@ -80,33 +100,29 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/provider_RecyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"/>
-
                 <TextView
-                    android:id="@+id/textView82"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView88"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/days_one"
+                    android:text="Roti Section"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-medium"
                     android:textStyle="bold"
                     android:textSize="20sp"
-                    android:textColor="@color/black"
-                    android:text="Go To Next Page" />
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="20dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/provider_roti"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
             </LinearLayout>
-
-
-
         </ScrollView>
 
 
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
