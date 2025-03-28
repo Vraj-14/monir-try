@@ -119,6 +119,235 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
+                <TextView
+                    android:id="@+id/textView89"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sabji Section"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/textView90"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Primary Sabji"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="18sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/editText91"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:hint="Aloo Ghobi"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginTop="10dp"/>
+
+
+
+                <TextView
+                    android:id="@+id/textView92"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Secondary Sabji"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="18sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/editText93"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:hint="Rajma"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"/>
+
+
+                <TextView
+                    android:id="@+id/textView94"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rice"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/textView95"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dal"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="20dp"/>
+
+<!--                <EditText-->
+<!--                    android:id="@+id/editText96"-->
+<!--                    android:layout_width="200dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/rounded_corners"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:hint="Kadhi"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:paddingEnd="60dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:layout_marginTop="10dp"/>-->
+
+                <EditText
+                    android:id="@+id/editText97"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="60dp"
+                    android:hint="Dal Fry"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/textView98"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Extras"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="20dp"/>
+
+                <EditText
+                    android:id="@+id/editText99"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners"
+                    android:paddingStart="10dp"
+                    android:hint="Papad"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:paddingEnd="60dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/editText100"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Salad"
+                    android:background="@drawable/rounded_corners"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:paddingEnd="60dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/editText101"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:background="@drawable/rounded_corners"
+                    android:hint="Raita"
+                    android:paddingEnd="60dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"/>
+
+<!--                <Button-->
+<!--                    android:id="@+id/button7"-->
+<!--                    android:layout_width="152dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:backgroundTint="#CE1212"-->
+<!--                    android:textSize="18dp"-->
+<!--                    android:text="Save" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp">
+
+
+                    <TextView
+                        android:id="@+id/textView103"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Set Price"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTextNumberSigned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ems="10"
+                        android:inputType="numberSigned" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="152dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#CE1212"
+                    android:textSize="18dp"
+                    android:text="Confirm" />
+
 
             </LinearLayout>
         </ScrollView>

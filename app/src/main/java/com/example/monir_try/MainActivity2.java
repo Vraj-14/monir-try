@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -14,10 +16,14 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class MainActivity2 extends AppCompatActivity {
 
     private FirebaseFirestore db;
-    private TextView textView42, textView48; // Added textView48 for Dinner
+    private TextView textView42, textView48; // Lunch & Dinner TextViews
     private ListenerRegistration listenerRegistration;
 
     @Override
@@ -25,13 +31,15 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        // Initialize Firestore and UI Elements
+        db = FirebaseFirestore.getInstance();
         textView42 = findViewById(R.id.textView42); // Lunch
         textView48 = findViewById(R.id.textView48); // Dinner
-        db = FirebaseFirestore.getInstance();
 
-        // Fetch food items from Firestore
+        // Fetch food items from Firestore in real-time
         fetchFoodItems();
 
+        // Button Click Listeners (UNCHANGED)
         ImageView imageView4 = findViewById(R.id.imageView4);
         imageView4.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity2.this, HomePage.class);
@@ -65,14 +73,20 @@ public class MainActivity2 extends AppCompatActivity {
         });
     }
 
-    // ------------ UPDATED FUNCTION TO FETCH BOTH LUNCH & DINNER DATA ---------------
+    // ✅ UPDATED: Fetch Both Lunch & Dinner Data in Real-Time
+
 
     private void fetchFoodItems() {
-        DocumentReference docRef = db.collection("Menu").document("Today");
+        // ✅ Get the current day (Monday, Tuesday, etc.)
+        String today = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(Calendar.getInstance().getTime());
+
+        // ✅ Use today's day name as the Firestore document
+        DocumentReference docRef = db.collection("Menu").document(today);
 
         listenerRegistration = docRef.addSnapshotListener((documentSnapshot, e) -> {
             if (e != null) {
                 Log.e("Firestore", "Error fetching data", e);
+                Toast.makeText(MainActivity2.this, "Failed to load menu", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -80,20 +94,24 @@ public class MainActivity2 extends AppCompatActivity {
                 String lunchMenu = documentSnapshot.getString("Lunch");
                 String dinnerMenu = documentSnapshot.getString("Dinner");
 
-                textView42.setText(lunchMenu != null ? lunchMenu : "No lunch menu available");
-                textView48.setText(dinnerMenu != null ? dinnerMenu : "No dinner menu available");
+                textView42.setText(lunchMenu != null ? lunchMenu : "Lunch menu not available");
+                textView48.setText(dinnerMenu != null ? dinnerMenu : "Dinner menu not available");
+
+                Log.d("Firestore", "Menu Updated: Lunch = " + lunchMenu + ", Dinner = " + dinnerMenu);
             } else {
-                textView42.setText("No lunch menu available");
-                textView48.setText("No dinner menu available");
+                textView42.setText("Lunch menu not available");
+                textView48.setText("Dinner menu not available");
+                Log.w("Firestore", "Document does not exist for " + today);
             }
         });
     }
+
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         if (listenerRegistration != null) {
-            listenerRegistration.remove();
+            listenerRegistration.remove(); // ✅ Stop Firestore listener when activity is destroyed
         }
     }
 }

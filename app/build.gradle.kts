@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+//    implementation("org.osmdroid:osmdroid-android:6.1.18") // dependency for maps
+//    implementation("org.slf4j:slf4j-android:1.7.36") // dependency for maps
 
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -40,6 +42,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
+    implementation(libs.play.services.maps)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
