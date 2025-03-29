@@ -76,36 +76,83 @@ public class MainActivity2 extends AppCompatActivity {
     // ✅ UPDATED: Fetch Both Lunch & Dinner Data in Real-Time
 
 
+//    private void fetchFoodItems() {
+//        // ✅ Get the current day (Monday, Tuesday, etc.)
+//        String today = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(Calendar.getInstance().getTime());
+//
+//        // ✅ Use today's day name as the Firestore document
+//        DocumentReference docRef = db.collection("Menu").document(today);
+//
+//        listenerRegistration = docRef.addSnapshotListener((documentSnapshot, e) -> {
+//            if (e != null) {
+//                Log.e("Firestore", "Error fetching data", e);
+//                Toast.makeText(MainActivity2.this, "Failed to load menu", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//
+//            if (documentSnapshot != null && documentSnapshot.exists()) {
+//                String lunchMenu = documentSnapshot.getString("Lunch");
+//                String dinnerMenu = documentSnapshot.getString("Dinner");
+//
+//                textView42.setText(lunchMenu != null ? lunchMenu : "Lunch menu not available");
+//                textView48.setText(dinnerMenu != null ? dinnerMenu : "Dinner menu not available");
+//
+//                Log.d("Firestore", "Menu Updated: Lunch = " + lunchMenu + ", Dinner = " + dinnerMenu);
+//            } else {
+//                textView42.setText("Lunch menu not available");
+//                textView48.setText("Dinner menu not available");
+//                Log.w("Firestore", "Document does not exist for " + today);
+//            }
+//        });
+//    }
+
     private void fetchFoodItems() {
-        // ✅ Get the current day (Monday, Tuesday, etc.)
-        String today = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(Calendar.getInstance().getTime());
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference docRef = db.collection("TiffinProviders").document("Provider1");
 
-        // ✅ Use today's day name as the Firestore document
-        DocumentReference docRef = db.collection("Menu").document(today);
+        docRef.get().addOnSuccessListener(documentSnapshot -> {
+            if (documentSnapshot.exists()) {
+                // Retrieve values from Firestore
+                String primarySabji = documentSnapshot.getString("Primary Sabji");
+                String secondarySabji = documentSnapshot.getString("Secondary Sabji");
+                String dal = documentSnapshot.getString("Dal");
+                String extra1 = documentSnapshot.getString("Extra1");
+                String extra2 = documentSnapshot.getString("Extra2");
+                String extra3 = documentSnapshot.getString("Extra3");
 
-        listenerRegistration = docRef.addSnapshotListener((documentSnapshot, e) -> {
-            if (e != null) {
-                Log.e("Firestore", "Error fetching data", e);
-                Toast.makeText(MainActivity2.this, "Failed to load menu", Toast.LENGTH_SHORT).show();
-                return;
-            }
+                // Handle null values to avoid "null" in TextView
+                if (primarySabji == null) primarySabji = "";
+                if (secondarySabji == null) secondarySabji = "";
+                if (dal == null) dal = "";
+                if (extra1 == null) extra1 = "";
+                if (extra2 == null) extra2 = "";
+                if (extra3 == null) extra3 = "";
 
-            if (documentSnapshot != null && documentSnapshot.exists()) {
-                String lunchMenu = documentSnapshot.getString("Lunch");
-                String dinnerMenu = documentSnapshot.getString("Dinner");
+                // Format data into a single string
+                String displayText =
+                        "Dal: " + dal + "\n" +
+                                "Primary Sabji: " + primarySabji + "\n" +
+                                "Secondary Sabji: " + secondarySabji + "\n" +
+                                "Extra1: " + extra1 + "\n" +
+                                "Extra2: " + extra2 + "\n" +
+                                "Extra3: " + extra3;
 
-                textView42.setText(lunchMenu != null ? lunchMenu : "Lunch menu not available");
-                textView48.setText(dinnerMenu != null ? dinnerMenu : "Dinner menu not available");
+                // Set the formatted text to textView42
+                TextView textView42 = findViewById(R.id.textView42);
+                textView42.setText(displayText);
 
-                Log.d("Firestore", "Menu Updated: Lunch = " + lunchMenu + ", Dinner = " + dinnerMenu);
+                TextView textView48 = findViewById(R.id.textView48);
+                textView48.setText(displayText);
             } else {
-                textView42.setText("Lunch menu not available");
-                textView48.setText("Dinner menu not available");
-                Log.w("Firestore", "Document does not exist for " + today);
+                Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
             }
+        }).addOnFailureListener(e -> {
+            Toast.makeText(this, "Failed to fetch data", Toast.LENGTH_SHORT).show();
         });
-    }
 
+
+
+    }
 
     @Override
     protected void onDestroy() {

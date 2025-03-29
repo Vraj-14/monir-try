@@ -94,6 +94,7 @@
             android:paddingLeft="10dp"
             android:paddingTop="18dp"
             android:text="User Name"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
 <!--        <EditText-->
@@ -129,6 +130,7 @@
             android:paddingLeft="10dp"
             android:paddingTop="18dp"
             android:text="Email Address"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <!-- Password -->
