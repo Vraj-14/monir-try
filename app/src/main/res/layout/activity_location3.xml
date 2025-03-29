@@ -49,7 +49,7 @@
             android:layout_marginTop="12dp"
             android:layout_weight="1"
             android:paddingLeft="20dp"
-            android:text="Choose Delivery Locationn"
+            android:text="Choose Deliveryy Locationn"
             android:textColor="#000000"
             android:textStyle="bold" />
     </LinearLayout>
