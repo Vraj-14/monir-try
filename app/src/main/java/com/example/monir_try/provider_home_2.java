@@ -42,7 +42,7 @@ public class provider_home_2 extends AppCompatActivity {
         textView102.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(provider_home_2.this, Provider_MainMenu.class);
+                Intent intent = new Intent(provider_home_2.this, provider_main_menu_2.class);
                 startActivity(intent);
             }
         });
