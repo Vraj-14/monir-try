@@ -75,7 +75,7 @@ public class ServiceLogin extends AppCompatActivity {
                         if (!querySnapshot.isEmpty()) {
                             // Login successful
                             Toast.makeText(ServiceLogin.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(ServiceLogin.this, provider_home.class);
+                            Intent intent = new Intent(ServiceLogin.this, provider_options.class); // to provider_option screen
                             startActivity(intent);
                             finish(); // Close login activity
                         } else {

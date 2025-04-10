@@ -81,7 +81,7 @@ public class SignUp extends AppCompatActivity {
                                 Map<String, Object> userMap = new HashMap<>();
                                 userMap.put("name", userName); // Store the value of userName
                                 userMap.put("email", userEmail); // Store the value of userEmail
-
+                                userMap.put("password",userPassword); //Store the value of password
                                 firestore.collection("users").document(userId).set(userMap)
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override

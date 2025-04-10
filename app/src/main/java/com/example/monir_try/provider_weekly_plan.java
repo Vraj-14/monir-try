@@ -21,7 +21,7 @@ public class provider_weekly_plan extends AppCompatActivity {
     private List<pr_itemModel> roti_itemList;
 
     private FirebaseFirestore db;
-    private EditText editTextPrice, editTextPrimarySabji, editTextSecondarySabji, editTextDal, editTextExtra1, editTextExtra2, editTextExtra3;
+    private EditText editTextPrice, editTextPrimarySabji, editTextSecondarySabji, editTextDal,editTextRice, editTextExtra1, editTextExtra2, editTextExtra3;
     private Button buttonConfirm;
 
     @Override
@@ -49,6 +49,7 @@ public class provider_weekly_plan extends AppCompatActivity {
         editTextPrimarySabji = findViewById(R.id.editText91);
         editTextSecondarySabji = findViewById(R.id.editText93);
         editTextDal = findViewById(R.id.editText97);
+        editTextRice=findViewById(R.id.editTextText5);
         editTextExtra1 = findViewById(R.id.editText99);
         editTextExtra2 = findViewById(R.id.editText100);
         editTextExtra3 = findViewById(R.id.editText101);
@@ -66,6 +67,7 @@ public class provider_weekly_plan extends AppCompatActivity {
             String primarySabji = editTextPrimarySabji.getText().toString().trim();
             String secondarySabji = editTextSecondarySabji.getText().toString().trim();
             String dal = editTextDal.getText().toString().trim();
+            String rice = editTextRice.getText().toString().trim();
             String extra1 = editTextExtra1.getText().toString().trim();
             String extra2 = editTextExtra2.getText().toString().trim();
             String extra3 = editTextExtra3.getText().toString().trim();
@@ -74,6 +76,7 @@ public class provider_weekly_plan extends AppCompatActivity {
             menuData.put("Primary Sabji", primarySabji);
             menuData.put("Secondary Sabji", secondarySabji);
             menuData.put("Dal", dal);
+            menuData.put("Rice", rice);
             menuData.put("Extra1", extra1);
             menuData.put("Extra2", extra2);
             menuData.put("Extra3", extra3);

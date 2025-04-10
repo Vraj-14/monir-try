@@ -116,6 +116,7 @@ public class MainActivity2 extends AppCompatActivity {
                 String primarySabji = documentSnapshot.getString("Primary Sabji");
                 String secondarySabji = documentSnapshot.getString("Secondary Sabji");
                 String dal = documentSnapshot.getString("Dal");
+                String rice = documentSnapshot.getString("Rice");
                 String extra1 = documentSnapshot.getString("Extra1");
                 String extra2 = documentSnapshot.getString("Extra2");
                 String extra3 = documentSnapshot.getString("Extra3");
@@ -124,18 +125,23 @@ public class MainActivity2 extends AppCompatActivity {
                 if (primarySabji == null) primarySabji = "";
                 if (secondarySabji == null) secondarySabji = "";
                 if (dal == null) dal = "";
+                if (rice == null) rice = "";
                 if (extra1 == null) extra1 = "";
                 if (extra2 == null) extra2 = "";
                 if (extra3 == null) extra3 = "";
 
                 // Format data into a single string
-                String displayText =
-                        "Dal: " + dal + "\n" +
-                                "Primary Sabji: " + primarySabji + "\n" +
-                                "Secondary Sabji: " + secondarySabji + "\n" +
-                                "Extra1: " + extra1 + "\n" +
-                                "Extra2: " + extra2 + "\n" +
-                                "Extra3: " + extra3;
+                String displayText = String.format(
+                        "%-20s %s\n%-20s %s\n%-20s %s\n%-20s %s\n%-20s %s\n%-20s %s\n%-20s %s",
+                        "Dal:", dal,
+                        "Primary Sabji:", primarySabji,
+                        "Secondary Sabji:", secondarySabji,
+                        "Rice:", rice,
+                        "Extra1:", extra1,
+                        "Extra2:", extra2,
+                        "Extra3:", extra3
+                );
+
 
                 // Set the formatted text to textView42
                 TextView textView42 = findViewById(R.id.textView42);

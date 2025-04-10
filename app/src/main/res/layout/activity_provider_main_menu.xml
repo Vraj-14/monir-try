@@ -87,20 +87,20 @@
                 android:layout_weight="0.33"
                 android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/textView83"
-                                android:layout_weight="0.30"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:fontFamily="sans-serif-medium"
-                                android:gravity="center_horizontal"
-                                android:paddingTop="50dp"
-                                android:paddingBottom="50dp"
-                                android:text="Set Weekly Plan"
-                                android:textAllCaps="false"
-                                android:textColor="#CE1212"
-                                android:textSize="28.6sp"
-                                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textView83"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.30"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="50dp"
+                    android:paddingBottom="50dp"
+                    android:text="Set Weekly Plan"
+                    android:textAllCaps="false"
+                    android:textColor="#CE1212"
+                    android:textSize="28.6sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
