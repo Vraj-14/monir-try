@@ -3,6 +3,7 @@ package com.example.monir_try;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -80,9 +81,12 @@ public class provider_home extends AppCompatActivity {
         docRef.get().addOnSuccessListener(documentSnapshot -> {
             if (documentSnapshot.exists()) {
                 String name = documentSnapshot.getString("Name");
-                String totalOrders = documentSnapshot.getString("Total Orders");
+
+                Long totalOrdersLong = documentSnapshot.getLong("Total Orders");
+                int totalOrders = totalOrdersLong != null ? totalOrdersLong.intValue() : 0;
+
                 textView11.setText(name);
-                textView80.setText(totalOrders);
+                textView80.setText(String.valueOf(totalOrders));
             } else {
                 textView11.setText("No data found");
                 textView80.setText("0");
@@ -91,6 +95,10 @@ public class provider_home extends AppCompatActivity {
             textView11.setText("Failed to load");
             textView80.setText("0");
         });
+
+
+
+
         // ----------- Firestore Code Ends Here -----------
 
     }

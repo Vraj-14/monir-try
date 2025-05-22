@@ -81,7 +81,8 @@ public class SignUp extends AppCompatActivity {
                                 Map<String, Object> userMap = new HashMap<>();
                                 userMap.put("name", userName); // Store the value of userName
                                 userMap.put("email", userEmail); // Store the value of userEmail
-                                userMap.put("password",userPassword); //Store the value of password
+                                userMap.put("password", hashPassword(userPassword)); // Store hashed password
+
                                 firestore.collection("users").document(userId).set(userMap)
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
@@ -120,5 +121,22 @@ public class SignUp extends AppCompatActivity {
                 startActivity(new Intent(SignUp.this, MainActivity.class));
             }
         });
+    }
+
+    // Helper method to hash the password
+    private String hashPassword(String password) {
+        try {
+            java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(password.getBytes("UTF-8"));
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
     }
 }

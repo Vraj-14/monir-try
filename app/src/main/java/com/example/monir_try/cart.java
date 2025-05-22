@@ -90,10 +90,12 @@
 package com.example.monir_try;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -107,8 +109,11 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class cart extends AppCompatActivity {
 
+
+
+public class cart extends AppCompatActivity {
+    EditText editTextNumber2;
     private FirebaseFirestore db;
     private TextView textViewPrice; // TextView to display price
 
@@ -155,6 +160,68 @@ public class cart extends AppCompatActivity {
             Log.e("cart", "Exception in onCreate: ", e);
             Toast.makeText(this, "Error initializing cart screen", Toast.LENGTH_LONG).show();
         }
+
+        Button button10 = findViewById(R.id.button10);
+        if (button10 != null) {
+            button10.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Step 1: Get provider email from Firestore
+                    DocumentReference docRef = db.collection("providers").document("rF8P56IJxgIm6iqUWJJB");
+                    docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot.exists()) {
+                                String email = documentSnapshot.getString("email");
+                                if (email != null && !email.isEmpty()) {
+                                    // Save to Firebase
+                                    EditText editTextNumber2 = findViewById(R.id.editTextNumber2);
+                                    String orderStr = editTextNumber2.getText().toString();
+                                    if (!orderStr.isEmpty()) {
+                                        try {
+                                            int totalOrders = Integer.parseInt(orderStr);
+                                            FirebaseFirestore.getInstance()
+                                                    .collection("ProvidersName")
+                                                    .document("Radhe Krishna Kitchen")
+                                                    .update("Total Orders", totalOrders)
+                                                    .addOnSuccessListener(aVoid -> Log.d("FirebaseUpdate", "Total Orders updated successfully"))
+                                                    .addOnFailureListener(e -> Log.e("FirebaseUpdate", "Error updating Total Orders", e));
+
+                                            // Step 2: Launch email intent
+                                            Intent intent = new Intent(Intent.ACTION_SEND);
+                                            intent.setType("message/rfc822");
+                                            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+                                            intent.putExtra(Intent.EXTRA_SUBJECT, "Order Confirmation");
+                                            intent.putExtra(Intent.EXTRA_TEXT, "Please Confirm the order of " + totalOrders + " tiffins");
+
+                                            try {
+                                                startActivity(Intent.createChooser(intent, "Send Confirmation Email"));
+                                            } catch (android.content.ActivityNotFoundException ex) {
+                                                Toast.makeText(cart.this, "No email client installed.", Toast.LENGTH_SHORT).show();
+                                            }
+                                        } catch (NumberFormatException e) {
+                                            Toast.makeText(cart.this, "Invalid order number format.", Toast.LENGTH_SHORT).show();
+                                        }
+                                    } else {
+                                        Toast.makeText(cart.this, "Please enter a valid order number.", Toast.LENGTH_SHORT).show();
+                                    }
+                                } else {
+                                    Toast.makeText(cart.this, "Email not found in document.", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                Toast.makeText(cart.this, "Provider document does not exist.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@androidx.annotation.NonNull Exception e) {
+                            Toast.makeText(cart.this, "Failed to fetch email: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            Log.e("EmailFetch", "Error fetching provider email", e);
+                        }
+                    });
+                }
+            });
+        }
     }
 
     private void retrievePriceFromFirestore() {
@@ -181,4 +248,7 @@ public class cart extends AppCompatActivity {
             Toast.makeText(cart.this, "Failed to load price", Toast.LENGTH_SHORT).show();
         });
     }
+
+
+
 }
