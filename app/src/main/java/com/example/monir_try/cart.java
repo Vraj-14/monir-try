@@ -167,7 +167,7 @@ public class cart extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     // Step 1: Get provider email from Firestore
-                    DocumentReference docRef = db.collection("providers").document("rF8P56IJxgIm6iqUWJJB");
+                    DocumentReference docRef = db.collection("providers").document("TtjxQAnyoPA5Uncu03Up"); //rF8P56IJxgIm6iqUWJJB
                     docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
